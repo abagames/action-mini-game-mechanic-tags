@@ -10,12 +10,17 @@ let gameUrls;
 /** @type { Object.<string, {description: string}> } */
 let categories;
 /** @type { {tag: string, category: string, typicalGame: string, overview: string, description: string}[]} */
+let tagList;
+let existsTags;
+/** @type { {game: string, tags: {category: string, tag: string}[]}[] } */
 let gameList;
 
 loadGameUrlsList();
 loadCategories();
-loadGamesList();
+loadTagList();
+loadGameList();
 saveIndexPage();
+saveTagPages();
 
 function loadGameUrlsList() {
   /** @type { {title: string, imageUrl: string, linkUrl: string, linkType: string, platformName: string}[]} */
@@ -43,18 +48,43 @@ function loadCategories() {
   });
 }
 
-function loadGamesList() {
+function loadTagList() {
   // @ts-ignore
-  gameList = loadCsv(tagsFileName, [
+  tagList = loadCsv(tagsFileName, [
     "tag",
     "typicalGame",
     "overview",
     "description",
   ]);
-  gameList.forEach((g) => {
-    const tc = g.tag.split(":");
-    g.category = tc[0];
-    g.tag = tc[1];
+  existsTags = {};
+  tagList.forEach((t) => {
+    existsTags[t.tag] = true;
+    const tc = t.tag.split(":");
+    t.category = tc[0];
+    t.tag = tc[1];
+  });
+}
+
+function loadGameList() {
+  const fs = require("fs");
+  const listCsv = fs.readFileSync(gamesFileName, "utf8");
+  const list = listCsv.split("\r\n");
+  list.shift();
+  list.pop();
+  // @ts-ignore
+  gameList = list.map((l) => {
+    const items = l.split(",");
+    const item = { game: items[0] };
+    const tags = [];
+    for (let i = 1; i < items.length; i++) {
+      if (!existsTags[items[i]]) {
+        throw `Unknown tag [${items[i]}]`;
+      }
+      const ct = items[i].split(":");
+      tags.push({ category: ct[0], tag: ct[1] });
+    }
+    item.tags = tags;
+    return item;
   });
 }
 
@@ -81,31 +111,34 @@ function saveIndexPage() {
   const fs = require("fs");
   /**
    * @type {{
-   *  title: string, imageUrl: string, description: string, linkUrl: string, linkType: string,
-   *  isCard: boolean
+   *  title: string, imageUrl: string, description: string,
+   *  linkUrl: string, anchorName:string, linkType: string, isCard: boolean
    * }[]}
    */
   const list = [];
   let category = undefined;
-  gameList.forEach((g) => {
-    if (g.category !== category) {
-      category = g.category;
+  tagList.forEach((t) => {
+    if (t.category !== category) {
+      category = t.category;
       list.push({
         title: category,
         imageUrl: undefined,
         description: categories[category].description,
         linkUrl: undefined,
+        anchorName: undefined,
         linkType: undefined,
         isCard: false,
       });
     }
-    console.log(`${g.category} : ${g.tag} / ${g.typicalGame}`);
-    const urls = gameUrls[g.typicalGame];
+    console.log(`${t.category} : ${t.tag} / ${t.typicalGame}`);
+    const urls = gameUrls[t.typicalGame];
+    const anchorName = replaceSpaceWidthUnderscore(t.category + "_" + t.tag);
     list.push({
-      title: g.tag,
+      title: t.tag,
       imageUrl: urls.imageUrl,
-      description: g.overview,
-      linkUrl: undefined,
+      description: t.overview,
+      linkUrl: `./${anchorName}.html`,
+      anchorName: anchorName,
       linkType: "Detail",
       isCard: true,
     });
@@ -114,10 +147,69 @@ function saveIndexPage() {
   fs.writeFileSync(fileName, pageHtml);
 }
 
+function saveTagPages() {
+  tagList.forEach((t) => {
+    console.log(`${t.category}:${t.tag}`);
+    saveTagPage(t.category, t.tag, t.overview, t.description);
+  });
+}
+
+function saveTagPage(category, tag, overview, description) {
+  const fileName = `${outputDirectory}${replaceSpaceWidthUnderscore(
+    category + "_" + tag
+  )}.html`;
+  const fs = require("fs");
+  /**
+   * @type {{
+   *  title: string, imageUrl: string, description: string,
+   *  linkUrl: string, anchorName:string, linkType: string, isCard: boolean
+   * }[]}
+   */
+  const list = [];
+  gameList.forEach((g) => {
+    let hasTag = false;
+    g.tags.forEach((t) => {
+      if (t.category === category && t.tag === tag) {
+        hasTag = true;
+      }
+    });
+    if (!hasTag) {
+      return;
+    }
+    const urls = gameUrls[g.game];
+    const description = g.tags
+      .map(
+        (t) => `
+      <a class="btn btn-outline-primary btn-sm my-1" href="./${replaceSpaceWidthUnderscore(
+        t.category + "_" + t.tag
+      )}.html">
+      ${t.category}#${t.tag}
+      </a>
+    `
+      )
+      .join("");
+    list.push({
+      title: g.game,
+      imageUrl: urls.imageUrl,
+      description: description,
+      linkUrl: urls.linkUrl,
+      anchorName: undefined,
+      linkType: "Play",
+      isCard: true,
+    });
+  });
+  const pageHtml = getPage(
+    list,
+    `${category}#${tag}`,
+    `${overview}${description}`
+  );
+  fs.writeFileSync(fileName, pageHtml);
+}
+
 /**
  * @param {{
- *  title: string, imageUrl: string, description: string, linkUrl: string, linkType: string,
- *  isCard: boolean
+ *  title: string, imageUrl: string, description: string,
+ *  linkUrl: string, anchorName:string, linkType: string, isCard: boolean
  * }[]} list
  * @param {string} tag
  * @param {string} description
@@ -125,10 +217,9 @@ function saveIndexPage() {
  */
 function getPage(list, tag, description) {
   const cardHtml = getCards(list);
-  let title = "action-mini-game mechanic tags";
-  if (tag.length > 0) {
-    title += `- ${tag}`;
-  }
+  const h1 = tag.length === 0 ? "action-mini-game mechanic tags" : tag;
+  const title =
+    "action-mini-game mechanic tags" + (tag.length === 0 ? "" : ` - ${tag}`);
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -173,7 +264,7 @@ function getPage(list, tag, description) {
       <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
           <a
-            href="${baseUrl}"
+            href="./index.html"
             class="navbar-brand d-flex align-items-center"
           >
             <strong>action-mini-game mechanic tags</strong>
@@ -186,7 +277,7 @@ function getPage(list, tag, description) {
       <section class="py-3 text-center container">
         <div class="row py-lg-3">
           <div class="col-lg-9 col-md-8 mx-auto">
-            <h1 class="fw-light">${title}</h1>
+            <h1 class="fw-light">${h1}</h1>
             <p class="lead text-muted">
               ${description}
             </p>
@@ -209,8 +300,8 @@ function getPage(list, tag, description) {
 
 /**
  * @param {{
- *  title: string, imageUrl: string, description: string, linkUrl: string, linkType: string,
- *  isCard: boolean
+ *  title: string, imageUrl: string, description: string,
+ *  linkUrl: string, anchorName: string, linkType: string, isCard: boolean
  * }[]} list
  * @return {string}
  */
@@ -218,7 +309,14 @@ function getCards(list) {
   return list
     .map((g) =>
       g.isCard
-        ? getCard(g.title, g.imageUrl, g.linkUrl, g.linkType, g.description)
+        ? getCard(
+            g.title,
+            g.imageUrl,
+            g.linkUrl,
+            g.anchorName,
+            g.linkType,
+            g.description
+          )
         : getSeparator(g.title, g.description)
     )
     .join("");
@@ -228,11 +326,12 @@ function getCards(list) {
  * @param {string} title
  * @param {string} imageUrl
  * @param {string} linkUrl
+ * @param {string} anchorName
  * @param {string} linkType
  * @param {string} description
  * @return {string}
  */
-function getCard(title, imageUrl, linkUrl, linkType, description) {
+function getCard(title, imageUrl, linkUrl, anchorName, linkType, description) {
   const buttonHtml =
     linkUrl === "undefined"
       ? `
@@ -284,7 +383,13 @@ function getCard(title, imageUrl, linkUrl, linkType, description) {
   <div class="card shadow-sm">
     ${imgHtml}
     <div class="card-body">
+      ${
+        anchorName != null
+          ? `<a name="${anchorName}" href="#${anchorName}" class="text-decoration-none">`
+          : ""
+      }
       <h5 class-"card-title">${title}</h5>
+      ${anchorName != null ? "</a>" : ""}
       <p class="card-text">${description}</p>
       ${buttonHtml}
     </div>
@@ -299,14 +404,27 @@ function getCard(title, imageUrl, linkUrl, linkType, description) {
  * @return {string}
  */
 function getSeparator(title, description) {
+  const anchor = replaceSpaceWidthUnderscore(title);
   return `
 <div class="col-md-12">
   <div class="card shadow-sm">
     <div class="card-body">
-      <h4 class="card-title">${title}</h4>
+      <h4 class="card-title">
+        <a name="${anchor}" href="#${anchor}" class="text-decoration-none">
+          ${title}
+        </a>
+      </h4>
       <p class="card-text">${description}</p>
     </div>
   </div>
 </div>
 `;
+}
+
+/**
+ * @param {string} str
+ * @returns {string}
+ */
+function replaceSpaceWidthUnderscore(str) {
+  return str.replace(/\s/g, "_");
 }
