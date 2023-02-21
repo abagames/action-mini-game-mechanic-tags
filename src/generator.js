@@ -180,7 +180,7 @@ function saveTagPage(category, tag, overview, description) {
     const description = g.tags
       .map(
         (t) => `
-      <a class="btn btn-outline-primary btn-sm my-1" href="./${replaceSpaceWidthUnderscore(
+      <a class="btn btn-secondary btn-sm my-1" href="./${replaceSpaceWidthUnderscore(
         t.category + "_" + t.tag
       )}.html">
       ${t.category}#${t.tag}
@@ -383,11 +383,7 @@ function getCard(title, imageUrl, linkUrl, anchorName, linkType, description) {
   <div class="card shadow-sm">
     ${imgHtml}
     <div class="card-body">
-      ${
-        anchorName != null
-          ? `<a name="${anchorName}" href="#${anchorName}" class="text-decoration-none">`
-          : ""
-      }
+      ${anchorName != null ? `<a name="${anchorName}">` : ""}
       <h5 class-"card-title">${title}</h5>
       ${anchorName != null ? "</a>" : ""}
       <p class="card-text">${description}</p>
