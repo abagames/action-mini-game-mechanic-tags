@@ -5,8 +5,7 @@ const tagsFileName = "./src/tags";
 const categoriesFileName = "./src/categories";
 const outputDirectory = "./docs/";
 
-//const langs = ["", "_ja"];
-const langs = ["_ja"];
+const langs = ["", "_ja"];
 
 /** @type { Object.<string, {imageUrl: string, linkUrl: string}> } */
 let gameUrls;
@@ -83,7 +82,7 @@ function loadGameList() {
   list.pop();
   // @ts-ignore
   gameList = list.map((l) => {
-    const items = l.split(",");
+    const items = parseCsvToArray(l);
     const item = { game: items[0] };
     const tags = [];
     for (let i = 1; i < items.length; i++) {
@@ -106,7 +105,7 @@ function loadCsv(fileName, properties) {
   list.pop();
   // @ts-ignore
   const itemList = list.map((l) => {
-    const items = l.split(",");
+    const items = parseCsvToArray(l);
     const item = {};
     properties.forEach((p, i) => {
       item[p] = items[i];
@@ -211,7 +210,7 @@ function saveTagPage(category, tag, overview, description) {
   const pageHtml = getPage(
     list,
     `${category}#${tag}`,
-    `${overview}${description}`
+    `${overview} ${description}`
   );
   fs.writeFileSync(fileName, pageHtml);
 }
@@ -239,7 +238,7 @@ function getPage(list, tag, description) {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${description}" />
-    <meta name="twitter:image" content="${baseUrl}twitter_image.png" />
+    <meta name="twitter:image" content="${baseUrl}twitter_card_image.png" />
     <title>${title}</title>
     <link href="favicon.png" rel="icon" />
 
@@ -433,4 +432,26 @@ function getSeparator(title, description) {
  */
 function replaceSpaceWidthUnderscore(str) {
   return str.replace(/\s/g, "_");
+}
+
+/**
+ * @param {string} str
+ * @returns {string[]}
+ */
+function parseCsvToArray(str) {
+  let a = [];
+  let i = 0;
+  for (;;) {
+    const isQuoted = str.charAt(i) === '"';
+    let ni = str.indexOf(isQuoted ? `"` : ",", isQuoted ? i + 1 : i);
+    if (ni < 0) {
+      if (!isQuoted) {
+        a.push(str.substring(i));
+      }
+      break;
+    }
+    a.push(str.substring(isQuoted ? i + 1 : i, ni));
+    i = ni + (isQuoted ? 2 : 1);
+  }
+  return a;
 }
