@@ -1,7 +1,7 @@
 tag,typical game,overview,description
 player:rotate,ORBIT MAN,回転する。,進行方向や弾の発射方向が時間で変化するので、タイミングを合わせて進んだり、弾を発射したりする。
 player:reciprocate,BALL TOUR,左右（もしくは上下）に往復する。,プレイヤー操作で移動やスピード変化が起こるメカニクスと組み合わせる。
-player:reflect,LINE B,壁や物に当たって反射する。,反射する動きの先を読んで、壁を配置するなどのアクションを取る。
+player:reflect,VH WALLS,壁や物に当たって反射する。,反射する動きの先を読んで、壁を配置するなどのアクションを取る。
 player:bounce,HOPPING P,常に飛び跳ねている。,上下の動きを使って、タイミング良く障害物を避けたり、アイテムを取ったりする。
 player:automatic,LADDER DROP,操作しなくても自動的に動く。,プレイヤーキャラクタが地形に沿って自動的に動いたり、敵を自動的に避けたりする。
 player:string,ZARTAN,ひもやばねの形をしている。,ひもに引っ張られる動作を取り入れることで、プレイヤーキャラクタの制御が複雑になる。
