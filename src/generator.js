@@ -152,7 +152,7 @@ function saveIndexPage() {
       isCard: true,
     });
   });
-  const pageHtml = getPage(list, "", categories["top"].description);
+  const pageHtml = getPage(list, "", categories["top"].description, true);
   fs.writeFileSync(fileName, pageHtml);
 }
 
@@ -210,7 +210,8 @@ function saveTagPage(category, tag, overview, description) {
   const pageHtml = getPage(
     list,
     `${category}#${tag}`,
-    `${overview} ${description}`
+    `${overview} ${description}`,
+    false
   );
   fs.writeFileSync(fileName, pageHtml);
 }
@@ -222,9 +223,10 @@ function saveTagPage(category, tag, overview, description) {
  * }[]} list
  * @param {string} tag
  * @param {string} description
+ * @param {boolean} hasTwitterCard
  * @return {string}
  */
-function getPage(list, tag, description) {
+function getPage(list, tag, description, hasTwitterCard) {
   const cardHtml = getCards(list);
   const h1 = tag.length === 0 ? "action-mini-game mechanic tags" : tag;
   const title =
@@ -235,10 +237,14 @@ function getPage(list, tag, description) {
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="twitter:card" content="summary_large_image" />
+    ${
+      hasTwitterCard
+        ? `<meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${description}" />
-    <meta name="twitter:image" content="${baseUrl}twitter_card_image.png" />
+    <meta name="twitter:image" content="${baseUrl}twitter_card_image.png" />`
+        : ""
+    }
     <title>${title}</title>
     <link href="favicon.png" rel="icon" />
 
