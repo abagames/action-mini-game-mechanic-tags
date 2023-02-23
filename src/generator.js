@@ -139,7 +139,7 @@ function saveIndexPage() {
         isCard: false,
       });
     }
-    console.log(`${t.category} : ${t.tag} / ${t.typicalGame}`);
+    console.log(`${t.category}: ${t.tag} / ${t.typicalGame}`);
     const urls = gameUrls[t.typicalGame];
     const anchorName = replaceSpaceWidthUnderscore(t.category + "_" + t.tag);
     list.push({
@@ -158,7 +158,7 @@ function saveIndexPage() {
 
 function saveTagPages() {
   tagList.forEach((t) => {
-    console.log(`${t.category}:${t.tag}`);
+    console.log(`${t.category}: ${t.tag}`);
     saveTagPage(t.category, t.tag, t.overview, t.description);
   });
 }
@@ -192,7 +192,7 @@ function saveTagPage(category, tag, overview, description) {
       <a class="btn btn-secondary btn-sm my-1" href="./${replaceSpaceWidthUnderscore(
         t.category + "_" + t.tag
       )}${lang}.html">
-      ${t.category}#${t.tag}
+      ${t.category}: ${t.tag}
       </a>
     `
       )
@@ -209,7 +209,7 @@ function saveTagPage(category, tag, overview, description) {
   });
   const pageHtml = getPage(
     list,
-    `${category}#${tag}`,
+    `${category}: ${tag}`,
     `${overview} ${description}`,
     false
   );
