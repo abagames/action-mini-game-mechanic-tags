@@ -1,24 +1,24 @@
 tag,typical game,overview,description
-player:rotate,ORBIT MAN,player:reciprocate,BALL TOUR,左右（もしくは上下）に往復する。,プレイヤー操作によって方向やスピードが変化するメカニクスと組み合わせることが多い。
-player:reciprocate,BALL TOUR,左右（もしくは上下）に往復する。,プレイヤー操作によって方向やスピードが変化するメカニクスと組み合わせることが多い。
+player:rotate,ORBIT MAN,回転する。,進行方向や弾の発射方向が時間で変化するので、タイミングを合わせて進んだり、弾を発射したりする。
+player:reciprocate,BALL TOUR,左右（もしくは上下）に往復する。,プレイヤー操作で移動やスピード変化が起こるメカニクスと組み合わせる。
 player:reflect,LINE B,壁や物に当たって反射する。,反射する動きの先を読んで、壁を配置するなどのアクションを取る。
 player:bounce,HOPPING P,常に飛び跳ねている。,上下の動きを使って、タイミング良く障害物を避けたり、アイテムを取ったりする。
-player:automatic,LADDER DROP,操作しなくても自動的に動く。,プレイヤーキャラクタが地形に沿って自動的に動く。プレイヤーは周りに地形を配置したりすることで、プレイヤーキャラクタが目的の場所へ移動するようにする。
+player:automatic,LADDER DROP,操作しなくても自動的に動く。,プレイヤーキャラクタが地形に沿って自動的に動く。プレイヤーは周りに地形を配置することで、プレイヤーキャラクタを目的の場所へ誘導する。
 player:string,ZARTAN,ひもやばねの形をしている。,ひもに引っ張られる動作を取り入れることで、プレイヤーキャラクタの制御が複雑になる。
 player:bar,TWIN P,棒状の形をしている。,回転動作と組み合わせることで、移動や障害物を避ける動作が複雑になる。
-player:circle,CIRCLE W,円状の形をしている。,半径を大きくすれば、当たり判定が大きくなるリスクが生まれる。
-player:multiple,SURVIVOR,複数のプレイヤーキャラクタが存在する。,複数のキャラクタを同時に扱う必要があるために、単純なゲームを複雑にできる。プレイヤーに対する負荷は増える。
-player:follow,IN TOW,プレイヤーキャラクタを追随する。,多くのキャラクタを引きつれるとリワードが増えるようにする場合が多い。その代わりに当たり判定が増えるというリスクが生まれる。
+player:circle,CIRCLE W,円状の形をしている。,半径を大きくすれば、当たり判定や攻撃判定が大きくなるリスクとリワードが生まれる。
+player:multiple,SURVIVOR,複数のプレイヤーキャラクタが存在する。,複数のキャラクタを同時に扱う必要があり、ゲームが複雑になる。
+player:follow,IN TOW,プレイヤーキャラクタを追随する。,多くのキャラクタを引きつれるとリワードが増えるようにする。代わりに当たり判定が増えるというリスクが生まれる。
 player:inverted,BOTTOP,反転した状態のプレイヤーキャラクタが存在する。,複数のフィールドがあり、その間をプレイヤーキャラクタが移動できる場合や、それぞれのフィールドに複数のプレイヤーキャラクタがいる場合がある。プレイヤーは複数のフィールドに同時に気を配る必要がある。
-player:limited vision,DARK CAVE,視界が限定されている。,画面内の見える範囲が限定されている、もしくは画面外の状況を確認する手段がある。視界外の状況を想定して動くというスキルをプレイヤーに要求する。
+player:limited vision,DARK CAVE,視界が限定されている。,画面内の見える範囲が限定されている、もしくは画面外の状況を確認する手段がある。視界外の状況を想定して動くというスキルが要求される。
 player:scaffold,SCAFFOLD,足場の上をプレイヤーキャラクタが動く。,プレイヤー操作によって足場を作り、プレイヤーキャラクタを誘導する。プレイヤーキャラクタを直接操作できない点が複雑さを生む。
 player:step on,UP DOWN PRESS,プレイヤーキャラクタは敵を踏む。,タイミングよく敵を上から踏むというリスクに対してリワードを与えることができる。
 player:paint,PAINT BALL,地形を塗る。,塗った地形が敵の動作に影響を与えたり、塗ることでリワードが得られるようにすることで、プレイヤーが移動について考えることが増える。
-weapon:artillery,THROW M,重力の影響を受けて砲弾のように放物線状に飛ぶ。,打ち出す角度を調整する操作と合わせて使われることが多い。狙ったところへうまく着弾させることが難しい。
+weapon:artillery,THROW M,重力の影響を受けて砲弾のように放物線状に飛ぶ。,撃ち出す角度を調整する操作と合わせて使われることが多い。狙ったところへうまく着弾させるスキルが要求される。
 weapon:chase,ACCEL B,敵を追跡する。,敵を狙わずに当てることができるので、プレイヤーの負担が減る。代わりに敵の数を増やすなど、プレイヤーの別の負担を増やすこともできる。
 weapon:vertical,FOOT LASER,上下方向などプレイヤーキャラクタが向いていない方向へ発射される。,進行方向以外の敵を攻撃できるため、敵の配置や攻撃方法にバリエーションを持たせることができる。
 weapon:reflect,HYPER LASER,壁で反射する。,遮蔽物に隠れた敵を攻撃することができる。
-weapon:auto aiming,SIGHT ON,敵の方向を自動的に向いて発射される。,近くの敵を自動的に狙う、などの自動制御される射線の特性を理解して攻撃する必要がある。敵からの攻撃は確実に当たるため、遮蔽物などのなんらかの対抗手段が必要とされる。攻撃方向を示す射線や照準と組み合わせて使われることが多い。
+weapon:auto aiming,SIGHT ON,敵の方向を自動的に向いて発射される。,近くの敵を自動的に狙う、などの自動制御される射線の特性を理解して攻撃する必要がある。敵からの攻撃は確実に当たるため、遮蔽物などのなんらかの対抗手段が必要とされる。攻撃方向を示す射線や照準と組み合わせて使われる。
 weapon:explosion,FLIPBOMB,爆発を発生させる。,爆発の範囲に多くの敵を巻き込むことで、多くのリワードが得られるようにする。爆発は誘爆を引き起こすことがある。
 weapon:blow off,BOMB UP,キャラクタを吹き飛ばす。,武器によってキャラクタを動かすことで、武器に破壊以外の効果を持たせることができる。
 weapon:wipe,LASER FORTRESS,敵を薙ぎ払う。,広範囲の敵を一度に倒す。ボタンを押している間薙ぎ払うようにすることで、攻撃範囲を調節できる。
@@ -32,80 +32,80 @@ weapon:change field,GRENADIER,地形を変化させる。,攻撃によって地�
 obstacle:fall,TAPE J,落下する。,落ちてくる障害物を避ける、もしくは攻撃して破壊する。
 obstacle:chase,G TAIL,プレイヤーキャラクタを追跡する。,うまく誘導して避ける。
 obstacle:bounce,BALLS BOMBS,常に飛び跳ねている。,跳ねている障害物の下をかいくぐる、もしくは上を越える。
-obstacle:split,B CANNON,分裂する。,攻撃を受けたり、時間経過で分裂して増える。増えることによって難度が上がるので、分裂する前に破壊する、分裂させるべき障害物を適切に選ぶ、などの行動が重要になる。
-obstacle:stack,PILEUP,積み重なる。,積み重なることで移動範囲が制限されたり、一定まで積みあがることでゲームオーバーになったりする。積み重ね方に制約がある場合もある。
+obstacle:split,B CANNON,分裂する。,攻撃を受けたり、時間経過で分裂して増える。増えることによって難度が上がるので、分裂する前に破壊する、分裂させるべき障害物を適切に選ぶ、などのアクションが重要になる。
+obstacle:stack,PILEUP,積み重なる。,積み重なることで移動範囲が制限されたり、一定まで積みあがることでゲームオーバーになったりするため、積み重ね方を工夫する必要がある。積み重ね方に制約がある場合もある。
 obstacle:foresee,SMILY ANGRY,プレイヤーキャラクタの動きを先読みする。,プレイヤーが動いている方向を見て、その先に攻撃を行う。プレイヤーキャラクタが同じ動作をしたままであると、攻撃を受ける。
-obstacle:well up,B BLAST,キャラクタが湧き出す。,湧き出すキャラクタを避けたり消したりする。
-obstacle:penalty,DIVARR,接触したり破壊したりすることでペナルティになる物が混在している。,攻撃を行う際に、ペナルティ対象のキャラクタをうまく避けて行う必要がある。強力な攻撃をもつプレイヤーキャラクタに対する制約として働く。
+obstacle:well up,B BLAST,キャラクタが湧き出す。,下方向から上方向へ湧き出すキャラクタを避けたり消したりする。
+obstacle:penalty,DIVARR,接触したり破壊したりすることでペナルティになる物が混在している。,攻撃を行う際に、ペナルティ対象のキャラクタをうまく避ける必要がある。強力な攻撃をもつプレイヤーキャラクタに対する制約として働く。
 field:floors,FLOORS 5,空中に複数の床が設置されている。,床の上から落ちないように、タイミングよくジャンプして床を渡る。床が移動して、プレイヤーキャラクタの移動に影響を与える場合もある。
 field:holes,GOLFME,地面に穴が空いている。,穴に落ちないように移動、ジャンプする。穴に隠れて敵の攻撃を避けるという利用方法もある。
 field:bottomless,TILTED,画面の下端に落ちるとゲームオーバーになる。,下端に落ちないように地形を利用してうまく進む。
-field:roughness,TURBULENT,地形がデコボコしている。,地形の傾斜によって移動やジャンプなどの挙動が変化する。デコボコした地形が障害物として働く場合もある。
+field:roughness,TURBULENT,地形がデコボコしている。,地形の傾斜によって移動やジャンプなどの挙動が変化する。デコボコした地形が障害物や遮蔽物として働く場合もある。
 field:spike,LIGHT DARK,接触するとゲームオーバーになる地形がある。,ジャンプや移動でスパイクのある地帯を避けて進む。
-field:outpost,HEXMIN,敵やアイテムが到達するとゲームオーバーになる地点がある。,プレイヤーキャラクタが倒される以外のゲームオーバー条件を設定できる。時間制限の一種だが、敵の配置などを考えて対応する必要があるなど、ゲームがより複雑になる。
+field:outpost,HEXMIN,敵やアイテムが到達するとゲームオーバーになる地点がある。,プレイヤーキャラクタが倒される以外のゲームオーバー条件を設定できる。時間制限の一種だが、敵の配置を考えて対応する必要があるなど、ゲームがより複雑になる。
 field:lanes,UP 1 WAY,プレイヤーキャラクタは複数のレーンの上を移動する。,レーンを流れてくる障害物を、タイミングよくレーンを移動して避ける。
 field:pins,PIN CLIMB,複数のピンが配置されている。,ピンに引っかける、ピンを渡り歩く、ピンとピンをつなぐ、ピンに当たりながら落ちる、など様々な使い方ができる。
 field:rotate,R WHEEL,フィールドが回転する。,プレイヤーキャラクタに左右移動以外のバリエーションを持たせたり、循環するフィールドを作ることができる。
 field:press,PRESS M,地形がキャラクタを押しつぶす。,押しつぶされない地点を探す、タイミングよく押しつぶす、場所を合わせて押しつぶすなどのアクションが取れる。
 field:gravity,GRAVELER,重力や引力が働いている。,方向を変えたり属性を変えたりして、引き寄せられないようにする。
-field:space,GEOCENT,宇宙がフィールドである。,惑星や隕石などの持つ性質をゲームに取り入れる。
-field:water,SUB JUMP,水面、水中がフィールドである。,水面と空中で操作が変化する、水面が風で変化する、水面下が見えない、などの状況が作れる。
+field:space,GEOCENT,宇宙がフィールドである。,惑星や隕石などが持つ性質をゲームに取り入れる。
+field:water,SUB JUMP,水面、水中がフィールドである。,水面と空中で動作が変化する、水面が風で変化する、水面下が見えない、などの状況が作れる。
 field:weather,KITE,天気や風が関係する。,自然現象によっておこる障害や、風の影響を受けるプレイヤーキャラクタが作れる。
 field:connected,C NODES,複数の物体が接続されている。,接続したものを切ったり、接続されたものを操作したりする。
-field:regenerate,REGENE,地形が再生する。,再生される地形をうまく避ける必要がある。
-field:1D,PAKU PAKU,1次元に制限されたフィールド。キャラクタは左右（もしくは上下）のみに動ける。,限られたフィールド上で成り立つよう、ゲームルールを適切に簡素化する必要がある。
+field:regenerate,REGENE,地形が再生する。,再生される地形をうまく避ける。
+field:1D,PAKU PAKU,1次元に制限されたフィールド。キャラクタは左右（もしくは上下）のみに動ける。,限られたフィールド上でゲームが成り立つよう、ゲームルールを適切に簡素化する必要がある。
 field:3D,PILLARS 3D,奥行きのある3次元のビュー。,遠くまで物を見渡せることを利用して、2Dでは実現が難しい物の配置ができる。
-field:multiple,UD CAVE,複数のフィールドが同時に表示される。,複数のフィールドの状態を同時に把握する必要があり、ゲームに複雑さを持たせることができる。
-rule:match,FORFOUR,色や数、形を合わせる。,
-rule:find,FIND A STAR,目標物を見分ける。,
-rule:separate,BOARDING,キャラクタを分類する。,
-rule:surround,TT FENCE,キャラクタで囲う。,
-rule:shelter,D LASER,遮蔽物に隠れる。,
-rule:pass through gap,INTERSPACE,隙間を通る。,
-rule:balance,BALANCE,バランスを取る。,
-rule:mathematics,DANGO,数学や数字の要素を含む。,
-rule:physics,HOLES,物理法則を取り入れる。,
-rule:geometry,SQUARE BAR,幾何学を取り入れる。,地形との干渉によってプレイヤーキャラクタが幾何学模様を描いたりする。
-rule:time limit,G PRESS,時間やリソースが尽きるとゲームオーバーになる。,
-rule:control weapons,UNCTRL,武器を操作する。,
-rule:proximity bonus,L RAIN,リスクに近接すると点が入る。,障害物の近くにボーナスアイテムを配置したり、障害物に接近すると点やリソースが手に入ったりする。リスクとリワードのバランスを取る手段として使える。
-rule:time manipulation,FUTURE WAKE,時間の流れが変化する。,
-rule:chain,M RIDER,連鎖して何かが起こる。,
-rule:friendly fire,EMBATTLED,武器が味方にも当たる。,
-on pressed:turn,THUNDER,方向を変える。,
-on pressed:jump,JUJUMP,ジャンプする。複数回ジャンプできる場合もある。,
-on pressed:flap,SCRAMBIRD,羽ばたいて上方向へ加速する。,
-on pressed:reverse state,NS CLIMB,属性や状態を反転させる。,
-on pressed:shoot,SCREEN,弾を撃つ。,
-on pressed:pierce,COLOR ROLL,まとめて貫く。,
-on pressed:split,DIVARR,複数に分かれる。,
-on pressed:select route,JUMP ON,進むルートを決定する。,
-on pressed:go forward,REVOLVE A,向いている方向へ前進する。,
-on pressed:jump into another,CYWALL,次の地点へ飛び移る。瞬間移動する。,
-on pressed:fall,LADDER DROP,下に落とす。,
-on pressed:change field,S SHAKE,フィールドを変化させる。,
-on pressed:attack,T PUNCH,武器を伸ばしたりして攻撃する。,
-on holding:adjust angle,NUMBER BALL,方向や距離を調整する。,
-on holding:rotate,SLALOM,回転する。,
-on holding:thrust,UP DOWN PRESS,プレイヤーキャラクタの前方や上方へ加速する。,
-on holding:move,BALLS BOMBS,移動する。,
-on holding:stop,UP SHOT,停止する。,
-on holding:shoot,ZONE B,弾を撃つ。,
-on holding:extend,TAPE J,物が伸びる、広がる。,
-on holding:charge,CHARGE BEAM,エネルギーをチャージする。,
-on holding:inhale,TR BEAM,吸い込む。,
-on holding:defend,EMBATTLED,防御状態になる。,
-on holding:defenseless,HYPER LASER,防御が無くなる、弱くなる。,
-on holding:reverse state,SHINY,属性や状態を反転させる。,
-on holding:avoid,LIE DOWN,敵や弾を避けたり通過できたりできる。,
-on released:throw,CAST N,投げる、もしくは前に進む。,
-on released:erase,B BLAST,範囲内のキャラクタを消す。,
-on sliding:move,FROM TWO SIDES,スライドした場所へ移動する。,
-on sliding:thrust,THRUST LR,スライドした方向へ加速する。,
-on tapped location:select,B MATH,キャラクタや項目を選択する。,
-on tapped location:detach,C NODES,キャラクタを切り離す、もしくはくっつける。,
-on tapped location:erase,BREED C,キャラクタを消去する。,
-on tapped location:locate,MAKE MAZE,キャラクタを配置する、移動する。,
-on got item:reverse state,MIRROR FLOOR,属性や状態、方向を反転させる。,
-on got item:power up,HOPPING P,パワーアップする。,
-on got item:spawn,T LANES,キャラクタを出現させる。,
+field:multiple,UD CAVE,複数のフィールドが同時に表示される。,複数のフィールドの状態を同時に把握する必要があり、ゲームが複雑になる。
+rule:match,FORFOUR,色や数、形を合わせる。,色などの並びを見ながら適切なタイミング、場所にアクションを取る必要がある。
+rule:find,FIND A STAR,目標物を見分ける。,目標の場所のヒントを頼りに探す。
+rule:separate,BOARDING,キャラクタを分類する。,キャラクタごとの分類先を確認しつつ適切なアクションを取る。
+rule:surround,TT FENCE,キャラクタで囲う。,ブロックやひもで閉じた空間を作る。大きな範囲を囲うと多くのリワードが得られる、特定の場所を狙って囲うなどの追加ルールが考えられる。
+rule:shelter,D LASER,遮蔽物に隠れる。,回避が困難な攻撃を遮蔽物を使って避ける。
+rule:pass through gap,INTERSPACE,隙間を通る。,プレイヤーキャラクタを隙間に合うように素早く移動させる。
+rule:balance,BALANCE,バランスを取る。,プレイヤーキャラクタの傾きの状態を見て倒れないようにする。
+rule:mathematics,DANGO,数学や数字の要素を含む。,数字を一致させたり、数式を計算したりする。
+rule:physics,HOLES,物理法則を取り入れる。,物と物の衝突や反発を考えて操作する。
+rule:geometry,SQUARE BAR,幾何学を取り入れる。,地形との干渉によってプレイヤーキャラクタが幾何学模様を描く。
+rule:time limit,G PRESS,時間やリソースが尽きるとゲームオーバーになる。,時間やリソースを回復させる手段と組み合わせる。
+rule:control weapons,UNCTRL,武器を操作する。,武器を操作して敵を狙ったり、敵の武器が接近する前に破壊したりする。
+rule:proximity bonus,L RAIN,リスクに近接すると点が入る。,障害物の近くにボーナスアイテムを配置したり、障害物に接近すると点やリソースが手に入ったりする。リスクとリワードのバランスを取る手段として使う。
+rule:time manipulation,FUTURE WAKE,時間の流れが変化する。,プレイヤー操作が必要ない時間をスキップしたり、細かな操作が必要な場面で時間を遅くしたりする。
+rule:chain,M RIDER,連鎖して何かが起こる。,まとめて破壊することでより多くのリワードが得られる。
+rule:friendly fire,EMBATTLED,武器が味方にも当たる。,自分の武器の攻撃範囲に入らないように避け、敵の同士討ちを狙う。
+on pressed:turn,THUNDER,方向を変える。,ボタンを押すことで90度、180度方向が変わる。あるいは押した矢印方向ボタンの方向へ向く。
+on pressed:jump,JUJUMP,ジャンプする。複数回ジャンプできる場合もある。,ジャンプして穴や敵、障害物を避ける。着地後からのジャンプ回数に制限を設けたり、ジャンプするたびにジャンプ力を減少させたりして、ジャンプ可能な高さを制限する。
+on pressed:flap,SCRAMBIRD,羽ばたいて上方向へ加速する。,ボタンを押すタイミングや回数を調整して、障害物を避ける。
+on pressed:reverse state,NS CLIMB,属性や状態を反転させる。,物の方向、通路の状態、通るレーン・フィールド、極性、など様々な属性がある。
+on pressed:shoot,SCREEN,弾を撃つ。,発射される武器のメカニクスによってゲームへの作用が大きく異なる。
+on pressed:pierce,COLOR ROLL,まとめて貫く。,色などをマッチさせて貫くと大きなリワードが得られる。
+on pressed:split,DIVARR,複数に分かれる。,複数に分かれた武器やプレイヤーキャラクタを同時に操作する必要がある。
+on pressed:select route,JUMP ON,進むルートを決定する。,複数レーンの間をつなぐ道があるフィールドで、タイミングよくレーンを選択する。
+on pressed:go forward,REVOLVE A,向いている方向へ前進する。,進む方向が時間で変化しているので、タイミングよく方向を決定する。
+on pressed:jump into another,CYWALL,次の地点へ飛び移る。瞬間移動する。,次の地点がピンなどで示されているので、そこへ移動しても問題ないかを判断し、タイミングよく移動する。
+on pressed:fall,LADDER DROP,下に落とす、落ちる。,所望の位置へ物を落とす。またはジャンプ中のキャラクタを地面まで瞬間的に落とすことで障害物を避ける。
+on pressed:change field,S SHAKE,フィールドを変化させる。,フィールドを変化させて物の挙動を変化させる。
+on pressed:attack,T PUNCH,武器を伸ばしたりして攻撃する。,攻撃範囲に敵が来たタイミングで攻撃する。
+on holding:adjust angle,NUMBER BALL,方向や距離を調整する。,押している間角度や距離が変化し、ボタンを離すことで発射したり移動したりする。ボタン操作のタイミングで移動先の場所を変化させることができる。
+on holding:rotate,SLALOM,回転する。,適切な方向をキャラクタが向くまでボタンを押しっぱなしにする。
+on holding:thrust,UP DOWN PRESS,プレイヤーキャラクタの前方や上方へ加速する。,長く押すと高速、短く押すと低速、とプレイヤーキャラクタを細かく制御できる。
+on holding:move,BALLS BOMBS,移動する。,押している間だけ移動したり、移動速度が上がったりする。プレイヤーキャラクタの位置をうまく制御して障害物を避ける。
+on holding:stop,UP SHOT,停止する。,障害物に接触する前に止まったり、敵に攻撃可能な場所・方向で止まったりする。
+on holding:shoot,ZONE B,弾を撃つ。,押している間攻撃を継続する。敵の状態に応じて攻撃を止め、次のアクションへ移る。
+on holding:extend,TAPE J,物が伸びる、広がる。,攻撃範囲や移動可能範囲を調整できる。範囲を広げることで当たり判定が広がるリスクと、広範囲を攻撃できるリワードが高まる。
+on holding:charge,CHARGE BEAM,エネルギーをチャージする。,必要な量をチャージし、ボタンを離して攻撃する。
+on holding:inhale,TR BEAM,吸い込む。,物理法則と組み合わせることで複雑な動きを実現できる。
+on holding:defend,EMBATTLED,防御状態になる。,押している間攻撃を受けないが、移動できないなどの代わりのデメリットがある。
+on holding:defenseless,HYPER LASER,防御が無くなる、弱くなる。,押している間攻撃するが、防御が弱くなる。
+on holding:reverse state,SHINY,属性や状態を反転させる。,押している間、重力や方向が反転するなどの特殊な状態になる。
+on holding:avoid,LIE DOWN,敵や弾を避けたり通過できたりできる。,伏せて敵を避けたり、物の後ろを通過できたりすることで、移動以外の回避手段が取れる。
+on released:throw,CAST N,投げる、もしくは前に進む。,ボタン押しっぱなしで攻撃や移動の方向・範囲を調整することと組み合わせる。
+on released:erase,B BLAST,範囲内のキャラクタを消す。,ボタンを押しっぱなしで攻撃範囲を調整し消す。
+on sliding:move,FROM TWO SIDES,スライドした場所へ移動する。,指で指定した場所へプレイヤーキャラクタを移動させる。矢印ボタンの操作でも代用できる。
+on sliding:thrust,THRUST LR,スライドした方向へ加速する。,プレイヤーキャラクタが慣性を持って移動するので、制御が複雑になる。
+on tapped location:select,B MATH,キャラクタや項目を選択する。,画面上に選択可能な項目・場所を複数表示し、それらを選ぶ。矢印ボタンでのカーソル移動と決定ボタンでも代用できる。
+on tapped location:detach,C NODES,キャラクタを切り離す、もしくはくっつける。,接続されているピン、もしくはピンの間を選択し、それらを切り離したりくっつけたりする。
+on tapped location:erase,BREED C,キャラクタを消去する。,色がマッチするなど特定の条件を満たした場合だけ消去できる場合もある。
+on tapped location:locate,MAKE MAZE,キャラクタを配置する、移動する。,地形を配置して自動的に動くプレイヤーキャラクタを制御したり、配置場所が決まっている物を移動させたりする。
+on got item:reverse state,MIRROR FLOOR,属性や状態、方向を反転させる。,アイテムを取ると重力・進行方向やフィールドなどが変化する。
+on got item:power up,HOPPING P,パワーアップする。,敵へ反撃が可能になったり、利用可能なリソースが増えたりする。
+on got item:spawn,T LANES,キャラクタを出現させる。,プレイヤーキャラクタが増える。武器を発射する。
