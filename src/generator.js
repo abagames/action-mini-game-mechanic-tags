@@ -1,9 +1,12 @@
 const baseUrl = "https://abagames.github.io/action-mini-game-mechanic-tags/";
-const tagsFileName = "./src/tags_ja.csv";
-const gamesFileName = "./src/games.csv";
 const gameUrlsFileName = "./src/game_urls.csv";
-const categoriesFileName = "./src/categories_ja.csv";
+const gamesFileName = "./src/games.csv";
+const tagsFileName = "./src/tags";
+const categoriesFileName = "./src/categories";
 const outputDirectory = "./docs/";
+
+//const langs = ["", "_ja"];
+const langs = ["_ja"];
 
 /** @type { Object.<string, {imageUrl: string, linkUrl: string}> } */
 let gameUrls;
@@ -14,13 +17,17 @@ let tagList;
 let existsTags;
 /** @type { {game: string, tags: {category: string, tag: string}[]}[] } */
 let gameList;
+let lang;
 
 loadGameUrlsList();
-loadCategories();
-loadTagList();
-loadGameList();
-saveIndexPage();
-saveTagPages();
+langs.forEach((l) => {
+  lang = l;
+  loadCategories();
+  loadTagList();
+  loadGameList();
+  saveIndexPage();
+  saveTagPages();
+});
 
 function loadGameUrlsList() {
   /** @type { {title: string, imageUrl: string, linkUrl: string, linkType: string, platformName: string}[]} */
@@ -41,7 +48,10 @@ function loadGameUrlsList() {
 function loadCategories() {
   /** @type { {category: string, description: string}[]} */
   // @ts-ignore
-  const categoryList = loadCsv(categoriesFileName, ["category", "description"]);
+  const categoryList = loadCsv(`${categoriesFileName}${lang}.csv`, [
+    "category",
+    "description",
+  ]);
   categories = {};
   categoryList.forEach((c) => {
     categories[c.category] = { description: c.description };
@@ -50,7 +60,7 @@ function loadCategories() {
 
 function loadTagList() {
   // @ts-ignore
-  tagList = loadCsv(tagsFileName, [
+  tagList = loadCsv(`${tagsFileName}${lang}.csv`, [
     "tag",
     "typicalGame",
     "overview",
@@ -107,7 +117,7 @@ function loadCsv(fileName, properties) {
 }
 
 function saveIndexPage() {
-  const fileName = `${outputDirectory}index.html`;
+  const fileName = `${outputDirectory}index${lang}.html`;
   const fs = require("fs");
   /**
    * @type {{
@@ -137,7 +147,7 @@ function saveIndexPage() {
       title: t.tag,
       imageUrl: urls.imageUrl,
       description: t.overview,
-      linkUrl: `./${anchorName}.html`,
+      linkUrl: `./${anchorName}${lang}.html`,
       anchorName: anchorName,
       linkType: "Detail",
       isCard: true,
@@ -157,7 +167,7 @@ function saveTagPages() {
 function saveTagPage(category, tag, overview, description) {
   const fileName = `${outputDirectory}${replaceSpaceWidthUnderscore(
     category + "_" + tag
-  )}.html`;
+  )}${lang}.html`;
   const fs = require("fs");
   /**
    * @type {{
@@ -182,7 +192,7 @@ function saveTagPage(category, tag, overview, description) {
         (t) => `
       <a class="btn btn-secondary btn-sm my-1" href="./${replaceSpaceWidthUnderscore(
         t.category + "_" + t.tag
-      )}.html">
+      )}${lang}.html">
       ${t.category}#${t.tag}
       </a>
     `
@@ -264,7 +274,7 @@ function getPage(list, tag, description) {
       <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
           <a
-            href="./index.html"
+            href="./index${lang}.html"
             class="navbar-brand d-flex align-items-center"
           >
             <strong>action-mini-game mechanic tags</strong>
