@@ -18,7 +18,7 @@ NUMBER BALL,on holding:adjust angle,on released:throw,rule:match,rule:mathematic
 COLOR ROLL,on pressed:pierce,rule:match
 REFLECTOR,weapon:explosion,weapon:interference,player:reciprocate,on holding:defenseless,weapon:vertical
 PIN CLIMB,field:pins,player:bar,on holding:extend,player:rotate
-LASER FORTRESS,weapon:wipe,on holding:shoot,obstacle:penalty,rule:classify,field:1D
+LASER FORTRESS,weapon:wipe,on holding:shoot,obstacle:penalty,rule:classify,field:1D,field:outpost
 FROOOOG,on holding:adjust angle,on released:throw
 R WHEEL,weapon:change field,weapon:vertical,field:spike,field:rotate,on pressed:jump,on pressed:shoot,on got item:power up
 BALL TOUR,player:reciprocate,on holding:move
@@ -30,7 +30,7 @@ RING BLAST,rule:physics,rule:time limit,weapon:arc
 CLEAN ROBO,rule:pass through gap,rule:geometry,player:rotate,on holding:stop,on holding:move
 FOOT LASER,on pressed:jump,weapon:vertical,on pressed:fall
 PAINT BALL,player:paint,player:rotate,on pressed:go forward,field:outpost
-PIZZA ARROW,on released:throw,rule:time manipulation
+PIZZA ARROW,on released:throw,rule:time manipulation,rule:time limit
 THRUST LR,on sliding:thrust,rule:physics
 PAIRS DROP,on tapped location:detach,rule:find
 ACCEL B,weapon:chase,on pressed:shoot,on holding:move
@@ -45,7 +45,7 @@ M JAMMING,weapon:explosion,rule:chain,player:automatic,obstacle:chase,on holding
 T LANES,player:multiple,field:lanes,on got item:spawn,on pressed:reverse state
 L RAIN,rule:proximity bonus,on sliding:move
 SCRAMBIRD,on pressed:flap,on pressed:shoot,field:roughness,field:spike,rule:time limit
-D LASER,rule:shelter,on pressed:turn
+D LASER,rule:shelter,on pressed:turn,on holding:stop
 KITE,field:weather,player:string,field:spike
 RAID,weapon:artillery,on pressed:shoot,on holding:thrust,rule:chain
 CATAPULT,on pressed:reverse state,rule:physics,field:bottomless
@@ -64,7 +64,7 @@ UP SHOT,weapon:vertical,on holding:stop,on holding:shoot,obstacle:fall
 BREED C,rule:match,on tapped location:erase
 ROLL S,on holding:avoid,on holding:shoot,on pressed:turn,field:lanes
 T PUNCH,on pressed:attack,on holding:rotate,on holding:extend
-B BLAST,obstacle:well up,rule:physics,on holding:extend,on released:erase
+B BLAST,obstacle:well up,rule:physics,on holding:extend,on released:erase,obstacle:penalty
 SMOKE G,weapon:smoke,weapon:auto aiming,weapon:ray,on pressed:shoot
 MORTAR,player:limited vision,weapon:explosion,on holding:adjust angle,on released:throw
 TURBULENT,field:roughness,on pressed:jump,on holding:thrust,rule:physics,field:water
@@ -100,7 +100,7 @@ GRENADIER,weapon:change field,field:holes,weapon:artillery,on holding:adjust ang
 DARK CAVE,player:limited vision,on sliding:move,on got item:power up
 BALLS BOMBS,obstacle:bounce,on got item:power up,weapon:explosion,on holding:move
 G TAIL,obstacle:chase,rule:proximity bonus,on sliding:move
-CATE P,on pressed:turn,on pressed:turn
+CATE P,on pressed:turn,on pressed:shoot
 SCREEN,player:inverted,on pressed:shoot,weapon:ray,field:outpost
 HYPER LASER,on holding:defenseless,on holding:shoot,weapon:reflect,field:outpost
 FORFOUR,rule:match,on pressed:turn
@@ -139,7 +139,7 @@ VH WALLS,player:reflect,on tapped location:locate,field:outpost
 PUMP PRESS,weapon:disablement,field:1D,rule:chain,on pressed:shoot
 TWO FACED,field:multiple,player:follow,player:inverted,on got item:spawn,player:rotate,on holding:stop,on holding:move
 SNAKE 1,player:follow,on got item:reverse state,on pressed:turn
-DIVARR,on pressed:split,obstacle:penalty,on pressed:turn
+DIVARR,on pressed:split,obstacle:penalty,on pressed:turn,rule:control weapons
 EAROCK,field:outpost,field:gravity,on holding:thrust,field:space
 CYWALL,on pressed:jump into another
 LLAND,on holding:thrust,field:roughness,field:spike
@@ -157,4 +157,4 @@ TWHOLS,player:reflect,on pressed:turn,field:holes
 INTERSPACE,rule:pass through gap,on sliding:move
 JUJUMP,on pressed:jump,on pressed:turn,field:floors,field:bottomless
 MONJUM,on holding:stop,on released:throw,field:holes
-REFBALS,player:multiple,player:reflect,field:floors,field:bottomless,field:gravity
+REFBALS,player:multiple,player:reflect,field:floors,field:bottomless
