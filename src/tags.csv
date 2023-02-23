@@ -58,7 +58,7 @@ field:3D,PILLARS 3D,A 3-dimensional view with depth and perspective.,"Taking adv
 field:multiple,UD CAVE,Multiple fields are displayed simultaneously.,"It is necessary to grasp the states of multiple fields simultaneously, and the game becomes complex."
 rule:match,FORFOUR,Matching colors, numbers, and shapes.,"It is necessary to take actions at the appropriate timing and location while observing the arrangement of colors and other elements."
 rule:find,FIND A STAR,Distinguishing the target object.,"Searching for the target location based on the hints provided."
-rule:separate,BOARDING,Classifying characters.,"Taking appropriate actions while confirming the classification of each character."
+rule:classify,BOARDING,Classifying characters.,"Taking appropriate actions while confirming the classification of each character."
 rule:surround,TT FENCE,Enclosing with characters.,"Creating enclosed spaces with blocks or strings. Additional rules such as aiming to enclose specific areas or enclosing large areas to earn more rewards can be considered."
 rule:shelter,D LASER,Hiding behind cover.,"Using cover to avoid attacks that are difficult to evade."
 rule:pass through gap,INTERSPACE,Passing through gaps.,"Quickly moving the player character to fit through narrow gaps."

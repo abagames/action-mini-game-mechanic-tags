@@ -18,7 +18,7 @@ NUMBER BALL,on holding:adjust angle,on released:throw,rule:match,rule:mathematic
 COLOR ROLL,on pressed:pierce,rule:match
 REFLECTOR,weapon:explosion,weapon:interference,player:reciprocate,on holding:defenseless,weapon:vertical
 PIN CLIMB,field:pins,player:bar,on holding:extend,player:rotate
-LASER FORTRESS,weapon:wipe,on holding:shoot,obstacle:penalty,rule:separate,field:1D
+LASER FORTRESS,weapon:wipe,on holding:shoot,obstacle:penalty,rule:classify,field:1D
 FROOOOG,on holding:adjust angle,on released:throw
 R WHEEL,weapon:change field,weapon:vertical,field:spike,field:rotate,on pressed:jump,on pressed:shoot,on got item:power up
 BALL TOUR,player:reciprocate,on holding:move
@@ -132,7 +132,7 @@ FIND A STAR,rule:find,on tapped location:select
 LIGHT DARK,player:inverted,on pressed:reverse state,on pressed:jump,field:spike
 PORTAL J,on pressed:jump into another,field:holes,field:1D
 TAPPUMP,on holding:extend,on pressed:flap,player:circle
-TEETER,rule:separate,on pressed:reverse state,rule:physics,field:pins
+TEETER,rule:classify,on pressed:reverse state,rule:physics,field:pins
 SLASHES,rule:proximity bonus,on pressed:turn
 MOLE N,rule:find,on tapped location:select,rule:mathematics
 VH WALLS,player:reflect,on tapped location:locate,field:outpost
@@ -148,7 +148,7 @@ PILEUP,obstacle:stack,obstacle:fall,on sliding:move
 FLIPBOMB,on pressed:reverse state,weapon:explosion,rule:chain,rule:physics,field:outpost
 SLALOM,on holding:rotate,rule:pass through gap
 DOSHIN,field:press,on tapped location:select,obstacle:penalty,field:outpost
-BOARDING,rule:separate,rule:physics,field:pins,on holding:stop,on pressed:reverse state
+BOARDING,rule:classify,rule:physics,field:pins,on holding:stop,on pressed:reverse state
 FLOATER,field:floors,on pressed:jump,field:bottomless
 GOLFME,on holding:adjust angle,on released:throw,field:holes,field:bottomless
 ZARTAN,player:string,field:pins,on pressed:jump into another,field:bottomless
