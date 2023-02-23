@@ -1,5 +1,7 @@
 # action-mini-game-mechanic-tags ([Top Page](https://abagames.github.io/action-mini-game-mechanic-tags/))
 
+[日本語版](https://abagames.github.io/action-mini-game-mechanic-tags/index_ja.html)
+
 I have sorted the games that I have created up to this point into tags for each category, illustrating the specific types of player characters, weapons, obstacles, fields, rules, and controls that they encompass. You can find a list of these tags on the page above. To obtain a more detailed description of each tag and a list of games that are associated with it, click on the 'Detail' button for that particular tag.
 
 I anticipate the subsequent utilities for this webpage:
