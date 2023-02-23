@@ -18,14 +18,14 @@ FLIP O,player:multiple,rule:physics,on pressed:reverse state
 SHINY,field:weather,field:holes,on holding:reverse state,on holding:move
 REBIRTH,on got item:reverse state,player:inverted,field:outpost,on pressed:jump,on pressed:fall
 IN TOW,player:follow,field:floors,on got item:power up
-CAST N,on released:throw,obstacle:penalty,on holding:adjust angle,rule:time limit,weapon:artillery
+CAST N,on released:throw,obstacle:penalty,on holding:adjust angle,rule:time limit,weapon:artillery,field:water
 BAMBOO,on holding:avoid,player:reflect,field:1D,obstacle:well up
 DESCENT S,on holding:thrust,rule:physics,field:weather
 NUMBER BALL,on holding:adjust angle,on released:throw,rule:match,rule:mathematics,weapon:artillery,field:outpost
 COLOR ROLL,on pressed:pierce,rule:match
 REFLECTOR,weapon:explosion,weapon:interference,player:reciprocate,on holding:defenseless,weapon:vertical
 PIN CLIMB,field:pins,player:bar,on holding:extend,player:rotate
-LASER FORTRESS,weapon:wipe,on holding:shoot,obstacle:penalty,field:1D
+LASER FORTRESS,weapon:wipe,on holding:shoot,obstacle:penalty,rule:separate,field:1D
 FROOOOG,on holding:adjust angle,on released:throw
 R WHEEL,weapon:change field,weapon:vertical,field:spike,field:rotate,on pressed:jump,on pressed:shoot,on got item:spawn
 BALL TOUR,player:reciprocate,on holding:move
@@ -86,7 +86,7 @@ WIPER,weapon:wipe,on pressed:reverse state,obstacle:fall,field:outpost
 TAPE J,on holding:extend,obstacle:fall,field:roughness
 T HANOI,on tapped location:locate,obstacle:stack
 ANT LION,field:gravity,field:rotate,on holding:move
-TR BEAM,on holding:inhale,obstacle:penalty,player:reciprocate
+TR BEAM,on holding:inhale,obstacle:penalty,rule:physics,player:reciprocate
 SWINGBY,field:gravity,on holding:rotate,field:space
 LIFT UP,on got item:reverse state,on holding:move,field:spike
 BOMB UP,weapon:blow off,weapon:explosion,obstacle:well up,on pressed:shoot,on pressed:attack
@@ -96,7 +96,7 @@ HEXMIN,field:outpost,on pressed:turn
 CROSS LINE,on tapped location:detach,field:connected,field:pins,rule:geometry
 TT FENCE,rule:surround,player:bar
 GEOCENT,field:space,player:follow,on holding:move,on holding:rotate
-RPS,field:lanes,rule:match,weapon:blow off,on pressed:reverse state,on pressed:select route,field:outpost
+RPS,field:lanes,rule:match,weapon:blow off,on pressed:reverse state,field:outpost
 GRENADIER,weapon:change field,field:holes,weapon:artillery,on holding:adjust angle,on released:throw,field:1D
 DARK CAVE,player:limited vision,on sliding:move,on got item:power up
 BALLS BOMBS,obstacle:bounce,on got item:power up,weapon:explosion,on holding:move
@@ -140,7 +140,7 @@ VH WALLS,player:reflect,on tapped location:locate,field:outpost
 PUMP PRESS,weapon:disablement,field:1D,rule:chain,on pressed:shoot
 TWO FACED,field:multiple,player:follow,on holding:rotate,player:inverted,on got item:power up
 SNAKE 1,player:follow,on got item:reverse state,on pressed:turn
-DIVARR,on pressed:split,obstacle:penalty
+DIVARR,on pressed:split,obstacle:penalty,on pressed:turn
 EAROCK,field:outpost,field:gravity,on holding:thrust,field:space
 CYWALL,on pressed:jump into another
 LLAND,on holding:thrust,field:roughness,field:spike
