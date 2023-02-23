@@ -1,14 +1,7 @@
 game,tags
-PAKU PAKU,field:1D,on got item:power up,obstacle:chase,on pressed:turn
-DANGO,rule:mathematics,on pressed:pierce,rule:time limit
-METEO PLANET,field:space,rule:proximity bonus,obstacle:fall,field:rotate
-RING BLAST,rule:physics,rule:time limit,weapon:arc
-CLEAN ROBO,rule:pass through gap,rule:geometry,player:rotate,on holding:stop,on holding:move
-UP 1 WAY,field:lanes,on pressed:jump,on got item:power up
-ROLL HOLD,player:rotate,on holding:stop,on holding:shoot
-FOOT LASER,on pressed:jump,weapon:vertical,on pressed:fall
-PAINT BALL,player:paint,player:rotate,on pressed:go forward,field:outpost
 SURVIVOR,player:multiple,on pressed:jump
+PAKU PAKU,field:1D,on got item:power up,obstacle:chase,on pressed:turn
+UP 1 WAY,field:lanes,on pressed:jump,on got item:power up
 CHARGE BEAM,on holding:charge,field:1D,obstacle:penalty,field:1D
 PILLARS 3D,field:3D,field:bottomless,player:bounce
 THUNDER,on pressed:turn,field:weather,rule:proximity bonus
@@ -17,7 +10,7 @@ CARD Q,on tapped location:select,rule:mathematics
 FLIP O,player:multiple,rule:physics,on pressed:reverse state
 SHINY,field:weather,field:holes,on holding:reverse state,on holding:move
 REBIRTH,on got item:reverse state,player:inverted,field:outpost,on pressed:jump,on pressed:fall
-IN TOW,player:follow,field:floors,on got item:power up
+IN TOW,player:follow,field:floors,on got item:spawn
 CAST N,on released:throw,obstacle:penalty,on holding:adjust angle,rule:time limit,weapon:artillery,field:water
 BAMBOO,on holding:avoid,player:reflect,field:1D,obstacle:well up
 DESCENT S,on holding:thrust,rule:physics,field:weather
@@ -27,9 +20,16 @@ REFLECTOR,weapon:explosion,weapon:interference,player:reciprocate,on holding:def
 PIN CLIMB,field:pins,player:bar,on holding:extend,player:rotate
 LASER FORTRESS,weapon:wipe,on holding:shoot,obstacle:penalty,rule:separate,field:1D
 FROOOOG,on holding:adjust angle,on released:throw
-R WHEEL,weapon:change field,weapon:vertical,field:spike,field:rotate,on pressed:jump,on pressed:shoot,on got item:spawn
+R WHEEL,weapon:change field,weapon:vertical,field:spike,field:rotate,on pressed:jump,on pressed:shoot,on got item:power up
 BALL TOUR,player:reciprocate,on holding:move
+ROLL HOLD,player:rotate,on holding:stop,on holding:shoot
 B MATH,rule:mathematics,on tapped location:select,rule:time limit
+DANGO,rule:mathematics,on pressed:pierce,rule:time limit
+METEO PLANET,field:space,rule:proximity bonus,obstacle:fall,field:rotate
+RING BLAST,rule:physics,rule:time limit,weapon:arc
+CLEAN ROBO,rule:pass through gap,rule:geometry,player:rotate,on holding:stop,on holding:move
+FOOT LASER,on pressed:jump,weapon:vertical,on pressed:fall
+PAINT BALL,player:paint,player:rotate,on pressed:go forward,field:outpost
 PIZZA ARROW,on released:throw,rule:time manipulation
 THRUST LR,on sliding:thrust,rule:physics
 PAIRS DROP,on tapped location:detach,rule:find
@@ -41,12 +41,11 @@ COUNTER B,weapon:interference,on holding:shoot
 M RIDER,rule:chain,on holding:thrust,field:bottomless
 S SHAKE,on pressed:change field,field:outpost
 ZONE B,player:limited vision,on holding:shoot,on pressed:turn
-M JAMMING,weapon:explosion,rule:chain,player:automatic,obstacle:chase,on holding:extend,on released:throw
+M JAMMING,weapon:explosion,rule:chain,player:automatic,obstacle:chase,on holding:extend,on released:erase
 T LANES,player:multiple,field:lanes,on got item:spawn,on pressed:reverse state
 L RAIN,rule:proximity bonus,on sliding:move
 SCRAMBIRD,on pressed:flap,on pressed:shoot,field:roughness,field:spike,rule:time limit
 D LASER,rule:shelter,on pressed:turn
-I SLASH,on pressed:attack,rule:chain
 KITE,field:weather,player:string,field:spike
 RAID,weapon:artillery,on pressed:shoot,on holding:thrust,rule:chain
 CATAPULT,on pressed:reverse state,rule:physics,field:bottomless
@@ -92,7 +91,7 @@ LIFT UP,on got item:reverse state,on holding:move,field:spike
 BOMB UP,weapon:blow off,weapon:explosion,obstacle:well up,on pressed:shoot,on pressed:attack
 JUMP ON,on pressed:select route,obstacle:chase
 D FIGHT,rule:shelter,weapon:auto aiming,weapon:ray,player:automatic,player:multiple,on sliding:move
-HEXMIN,field:outpost,on pressed:turn
+HEXMIN,field:outpost,player:multiple,on pressed:turn
 CROSS LINE,on tapped location:detach,field:connected,field:pins,rule:geometry
 TT FENCE,rule:surround,player:bar
 GEOCENT,field:space,player:follow,on holding:move,on holding:rotate
@@ -113,7 +112,7 @@ TILTED,on pressed:jump,on pressed:turn,field:floors,field:bottomless,rule:physic
 NOT TURN,on pressed:select route,on holding:move,field:lanes
 TWO LANE,field:lanes,on pressed:reverse state,on holding:thrust
 TWIN P,player:bar,player:rotate,on pressed:reverse state,on holding:extend
-MAKE MAZE,on tapped location:locate,player:automatic,player:multiple,field:outpost
+MAKE MAZE,on tapped location:locate,player:automatic,player:scaffold,player:multiple,field:outpost
 V BOMB,weapon:time limit,rule:friendly fire,on pressed:turn
 S LANES,field:lanes,field:outpost,on holding:shoot,on holding:move
 TOTOGE,player:limited vision,on pressed:jump,field:spike
@@ -138,7 +137,7 @@ SLASHES,rule:proximity bonus,on pressed:turn
 MOLE N,rule:find,on tapped location:select,rule:mathematics
 VH WALLS,player:reflect,on tapped location:locate,field:outpost
 PUMP PRESS,weapon:disablement,field:1D,rule:chain,on pressed:shoot
-TWO FACED,field:multiple,player:follow,on holding:rotate,player:inverted,on got item:power up
+TWO FACED,field:multiple,player:follow,player:inverted,on got item:spawn,player:rotate,on holding:stop,on holding:move
 SNAKE 1,player:follow,on got item:reverse state,on pressed:turn
 DIVARR,on pressed:split,obstacle:penalty,on pressed:turn
 EAROCK,field:outpost,field:gravity,on holding:thrust,field:space
@@ -158,4 +157,4 @@ TWHOLS,player:reflect,on pressed:turn,field:holes
 INTERSPACE,rule:pass through gap,on sliding:move
 JUJUMP,on pressed:jump,on pressed:turn,field:floors,field:bottomless
 MONJUM,on holding:stop,on released:throw,field:holes
-REFBALS,player:multiple,player:reflect,field:floors,field:bottomless
+REFBALS,player:multiple,player:reflect,field:floors,field:bottomless,field:gravity
