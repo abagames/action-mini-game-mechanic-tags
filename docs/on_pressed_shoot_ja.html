@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>action-mini-game mechanic tags - on pressed: shoot</title>
+
+    <link
+      href="./bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link href="./dark_mode.css" rel="stylesheet" />
+
+    <meta name="theme-color" content="#7952b3" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a
+            href="./index_ja.html"
+            class="navbar-brand d-flex align-items-center"
+          >
+            <strong>action-mini-game mechanic tags</strong>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="py-3 text-center container">
+        <div class="row py-lg-3">
+          <div class="col-lg-9 col-md-8 mx-auto">
+            <h1 class="fw-light">on pressed: shoot</h1>
+            <p class="lead text-muted">
+              弾を撃つ。 発射される武器のメカニクスによってゲームへの作用が大きく異なる。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/rwheel/screenshot.gif"
+  alt="R WHEEL"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">R WHEEL</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_change_field_ja.html">
+      weapon: change field
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_vertical_ja.html">
+      weapon: vertical
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./field_spike_ja.html">
+      field: spike
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./field_rotate_ja.html">
+      field: rotate
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_jump_ja.html">
+      on pressed: jump
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_got_item_power_up_ja.html">
+      on got item: power up
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?rwheel"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/accelb/screenshot.gif"
+  alt="ACCEL B"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">ACCEL B</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_chase_ja.html">
+      weapon: chase
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_holding_move_ja.html">
+      on holding: move
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?accelb"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/scrambird/screenshot.gif"
+  alt="SCRAMBIRD"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">SCRAMBIRD</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_flap_ja.html">
+      on pressed: flap
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./field_roughness_ja.html">
+      field: roughness
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./field_spike_ja.html">
+      field: spike
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./rule_time_limit_ja.html">
+      rule: time limit
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?scrambird"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/raid/screenshot.gif"
+  alt="RAID"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">RAID</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_artillery_ja.html">
+      weapon: artillery
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_holding_thrust_ja.html">
+      on holding: thrust
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./rule_chain_ja.html">
+      rule: chain
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?raid"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/smokeg/screenshot.gif"
+  alt="SMOKE G"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">SMOKE G</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_smoke_ja.html">
+      weapon: smoke
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_auto_aiming_ja.html">
+      weapon: auto aiming
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_ray_ja.html">
+      weapon: ray
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?smokeg"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/bombup/screenshot.gif"
+  alt="BOMB UP"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">BOMB UP</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_blow_off_ja.html">
+      weapon: blow off
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_explosion_ja.html">
+      weapon: explosion
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./obstacle_well_up_ja.html">
+      obstacle: well up
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_attack_ja.html">
+      on pressed: attack
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?bombup"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/catep/screenshot.gif"
+  alt="CATE P"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">CATE P</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_turn_ja.html">
+      on pressed: turn
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?catep"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/screen/screenshot.gif"
+  alt="SCREEN"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">SCREEN</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./player_inverted_ja.html">
+      player: inverted
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_ray_ja.html">
+      weapon: ray
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./field_outpost_ja.html">
+      field: outpost
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?screen"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/dmissile/screenshot.gif"
+  alt="D MISSILE"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">D MISSILE</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./rule_control_weapons_ja.html">
+      rule: control weapons
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./obstacle_split_ja.html">
+      obstacle: split
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_holding_rotate_ja.html">
+      on holding: rotate
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./player_multiple_ja.html">
+      player: multiple
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./field_outpost_ja.html">
+      field: outpost
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?dmissile"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/dpistols/screenshot.gif"
+  alt="D PISTOLS"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">D PISTOLS</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_holding_shoot_ja.html">
+      on holding: shoot
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_turn_ja.html">
+      on pressed: turn
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?dpistols"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/sighton/screenshot.gif"
+  alt="SIGHT ON"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">SIGHT ON</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_auto_aiming_ja.html">
+      weapon: auto aiming
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_explosion_ja.html">
+      weapon: explosion
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./field_outpost_ja.html">
+      field: outpost
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?sighton"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    
+<img
+  src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/pumppress/screenshot.gif"
+  alt="PUMP PRESS"
+  class="bd-placeholder-img card-img-top"
+  height="225"
+  style="object-fit: contain"
+  loading="lazy"
+/>
+
+    <div class="card-body">
+      
+      <h5 class-"card-title">PUMP PRESS</h5>
+      
+      <p class="card-text">
+      <a class="btn btn-secondary btn-sm my-1" href="./weapon_disablement_ja.html">
+      weapon: disablement
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./field_1D_ja.html">
+      field: 1D
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./rule_chain_ja.html">
+      rule: chain
+      </a>
+    
+      <a class="btn btn-secondary btn-sm my-1" href="./on_pressed_shoot_ja.html">
+      on pressed: shoot
+      </a>
+    </p>
+      
+          <a
+            href="https://abagames.github.io/crisp-game-lib-games/?pumppress"
+            class="btn btn-primary my-2"
+            >Play</a
+          >
+
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
