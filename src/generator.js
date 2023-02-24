@@ -246,7 +246,6 @@ function getPage(list, tag, description, hasTwitterCard) {
         : ""
     }
     <title>${title}</title>
-    <link href="favicon.png" rel="icon" />
 
     <link
       href="./bootstrap.min.css"
