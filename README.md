@@ -10,4 +10,4 @@ I anticipate the subsequent utilities for this webpage:
 - Peruse the tag-specific details page and contemplate alternative games that employ said game mechanics.
 - Synthesize multiple tags as appropriate and generate novel game concepts utilizing the aforementioned mechanics.
 
-[Using ChatGPT, it is possible to conceive novel games by combining multiple tags.](./combine_tags_with_chatgpt.md)
+You can also employ [ChatGPT to conceive novel games by combining multiple tags.](./combine_tags_with_chatgpt.md)
