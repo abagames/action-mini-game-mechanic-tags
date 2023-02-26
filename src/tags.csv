@@ -2,7 +2,7 @@ tag,typical game,overview,description
 player:rotate,ORBIT MAN,Rotation occurs.,"Timing must be coordinated to advance or fire bullets, as the direction of movement and the firing direction of bullets change over time."
 player:reciprocate,BALL TOUR,The object reciprocates horizontally or vertically.,"This is combined with mechanics that involve player-controlled movement and speed changes."
 player:reflect,VH WALLS,The player character reflects upon colliding with a wall or object.,"To anticipate the movement of the reflection, actions such as positioning walls should be taken."
-player:bounce,HOPPING P,The player character is constantly bouncing,"Utilizing vertical movements.,it timely avoids obstacles and collects items."
+player:bounce,HOPPING P,The player character is constantly bouncing.,"Utilizing vertical movements.,it timely avoids obstacles and collects items."
 player:automatic,LADDER DROP,The player character moves automatically without requiring input.,"The player character moves automatically along the terrain and avoids enemies on its own."
 player:string,ZARTAN,The player character has the shape of a string or spring.,"Incorporating movements that involve being pulled by a string makes controlling the player character more intricate."
 player:bar,TWIN P,The player character  has a rod-shaped form.,"When combined with rotational motion, it adds complexity to movements such as dodging obstacles and maneuvering."
