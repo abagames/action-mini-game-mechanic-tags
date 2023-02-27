@@ -4,27 +4,27 @@ Through [this prompt](#prompt) on [ChatGPT](https://openai.com/blog/chatgpt/), i
 
 ---
 
-Game 1: Scaffold Jump
+Game 1: Scaffold Jump<br>
 Selected tags: player: scaffold, on pressed: jump
 
 Description: In this game, the player controls a character that moves along scaffolds. The character constantly moves forward, and the player can make the character jump by pressing the button. The objective is to avoid falling off the scaffolds or hitting obstacles while collecting coins or power-ups. The game gets progressively faster and more difficult as the player advances.
 
-Game 2: Pinball Panic
+Game 2: Pinball Panic<br>
 Selected tags: player: circle, weapon: bounce, field: pins, on pressed: shoot
 
 Description: In this game, the player controls a circular character that bounces around a pinball-like field. The player can shoot projectiles by pressing the button, which bounce off the pins and destroy enemies. The objective is to survive as long as possible while racking up points by destroying enemies and collecting power-ups.
 
-Game 3: Springy Strings
+Game 3: Springy Strings<br>
 Selected tags: player: string, player: bounce, field: gravity, on pressed: jump
 
 Description: In this game, the player controls a spring-like character that bounces around a zero-gravity field. The character can jump by pressing the button, which sends it bouncing higher into the air. The objective is to avoid obstacles and enemies while collecting power-ups and reaching the end of the level.
 
-Game 4: Wipeout Warriors
+Game 4: Wipeout Warriors<br>
 Selected tags: player: bar, field: water, obstacle: chase, weapon: wipe, on pressed: jump
 
 Description: In this game, the player controls a bar-shaped character that races through a water course filled with obstacles and enemies. The character automatically moves forward, and the player can make the character jump by pressing the button. The character can also use a wiping weapon to clear the way of obstacles and enemies. The objective is to reach the end of the course in the shortest time possible.
 
-Game 5: Color Conundrum
+Game 5: Color Conundrum<br>
 Selected tags: rule: match, rule: time limit, field: roughness, on pressed: turn
 
 Description: In this game, the player controls a character that must navigate a rough terrain while matching colors. The character automatically moves forward, and the player can turn left or right by pressing the button. The objective is to match as many colors as possible before the time runs out, while avoiding obstacles and enemies on the way.
