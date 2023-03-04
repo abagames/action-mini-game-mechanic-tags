@@ -2,7 +2,7 @@ game,tags
 SURVIVOR,player:multiple,on pressed:jump
 PAKU PAKU,field:1D,on got item:power up,obstacle:chase,on pressed:turn
 UP 1 WAY,field:lanes,on pressed:jump,on got item:power up
-CHARGE BEAM,on holding:charge,field:1D,obstacle:penalty,field:1D
+CHARGE BEAM,on holding:charge,field:1D,obstacle:penalty
 PILLARS 3D,field:3D,field:bottomless,player:bounce
 THUNDER,on pressed:turn,field:weather,rule:proximity bonus
 GROWTH,on holding:extend,field:3D
@@ -59,7 +59,7 @@ NS CLIMB,on pressed:reverse state,field:gravity
 SNAKY,rule:balance,field:connected,on holding:thrust
 MIRROR FLOOR,on got item:reverse state,field:bottomless,on pressed:jump
 SUB JUMP,field:water,field:roughness,on pressed:jump
-PHOTON LINE,rule:match,on holding:rotate
+PHOTON LINE,rule:match,on holding:rotate,field:1D
 UP SHOT,weapon:vertical,on holding:stop,on holding:shoot,obstacle:fall
 BREED C,rule:match,on tapped location:erase
 ROLL S,on holding:avoid,on holding:shoot,on pressed:turn,field:lanes
@@ -85,7 +85,7 @@ WIPER,weapon:wipe,on pressed:reverse state,obstacle:fall,field:outpost
 TAPE J,on holding:extend,obstacle:fall,field:roughness
 T HANOI,on tapped location:locate,obstacle:stack
 ANT LION,field:gravity,field:rotate,on holding:move
-TR BEAM,on holding:inhale,obstacle:penalty,rule:physics,player:reciprocate
+TR BEAM,on holding:inhale,obstacle:penalty,rule:physics,player:reciprocate,obstacle:well up
 SWINGBY,field:gravity,on holding:rotate,field:space
 LIFT UP,on got item:reverse state,on holding:move,field:spike
 BOMB UP,weapon:blow off,weapon:explosion,obstacle:well up,on pressed:shoot,on pressed:attack
